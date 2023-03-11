@@ -11,11 +11,18 @@
     <div class="app-container">
 
       <header>
-        <input type="color" />
-        <select>
+        <input id="color-input" type="color" />
+        <select id="scheme-input">
           <option value="monochrome">monochrome</option>
+          <option value="monochrome-dark">monochrome-dark</option>
+          <option value="monochrome-light">monochrome-light</option>
+          <option value="analogic">analogic</option>
+          <option value="complement">complement</option>
+          <option value="analogic-complement">analogic-complement</option>
+          <option value="triad">triad</option>
+          <option value="quad">quad</option>
         </select>
-        <button type="button">Get color scheme</button>
+        <button id="get-color-btn" type="button">Get color scheme</button>
       </header>
 
       <section class="main">
