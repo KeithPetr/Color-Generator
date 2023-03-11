@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.app-container {
+    background-color: lightblue;
+    width: 95%;
+    max-width: 768px;
+    min-width: 480px;
+    margin: 2em auto;
+    border: 5px solid red;
+    border-radius: 5px;
+}
+
+/* ---------------------- Header Section ------------------ */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5em 1em;
+    border: 1px solid green;
+}
+
+select {
+    width: 50%;
+}
+
+/* -------------------- Main Section ------------------------- */
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    text-align: center;
+}
+
+.color-container {
+    border: 1px solid orange;
+}
+
+.color {
+    background-color: #ffffff;
+    width: 100%;
+    height: 350px;
+}
+
+.hex-value {
+    background-color: #ffffff;
+    width: 50%;
+    margin: 1em auto;
+}
