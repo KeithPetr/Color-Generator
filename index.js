@@ -5,9 +5,8 @@ const mainEl = document.getElementById("main");
 
 let html = "";
 
-getColorBtn.addEventListener("click", (e) => {
-  fetch(
-    `https://www.thecolorapi.com/scheme?hex=${colorEl.value.substring(1)}&mode=${schemeEl.value}`)
+getColorBtn.addEventListener("click", () => {
+  fetch(`https://www.thecolorapi.com/scheme?hex=${colorEl.value.substring(1)}&mode=${schemeEl.value}`)
     .then((res) => res.json())
     .then((data) => {
       html = data.colors
@@ -18,11 +17,12 @@ getColorBtn.addEventListener("click", (e) => {
                 <p class="hex-value" id="hex-value">${color.hex.value}</p>
             </div>
             `;
-        })
-        .join("");
+        }).join("");
       mainEl.innerHTML = html;
     });
 });
+
+// Copy hex value to clipboard
 
 function copyHexValue(e) {
     const hexValueEl = e.target;
