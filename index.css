@@ -55,9 +55,9 @@ button:hover {
 }
 
 .color-container {
-    display: flex;
-    align-items: center;
-    border-top: 1px solid black;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid black;
 }
 
 .color {
@@ -76,6 +76,11 @@ img {
   width: 50%;
   margin: 1em auto;
   text-align: center;
+}
+
+.hex-value:hover {
+  cursor: pointer;
+  text-shadow: 1px 1px blue;
 }
 
 /* -------------- Media Queries -------------------------- */
@@ -112,5 +117,9 @@ img {
   .color-container {
     display: flex;
     flex-direction: column;
-}
+  }
+
+  .hex-value {
+    font-size: 1.2rem;
+  }
 }
