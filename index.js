@@ -3,13 +3,12 @@ const schemeEl = document.getElementById("scheme-input");
 const getColorBtn = document.getElementById("get-color-btn");
 const mainEl = document.getElementById("main");
 
-let html = "";
-
-getColorBtn.addEventListener("click", () => {
+// Functions
+function getScheme () {
   fetch(`https://www.thecolorapi.com/scheme?hex=${colorEl.value.substring(1)}&mode=${schemeEl.value}`)
     .then((res) => res.json())
     .then((data) => {
-      html = data.colors
+      mainEl.innerHTML = data.colors
         .map((color) => {
           return `
             <div class="color-container">
@@ -18,12 +17,10 @@ getColorBtn.addEventListener("click", () => {
             </div>
             `;
         }).join("");
-      mainEl.innerHTML = html;
     });
-});
+}
 
 // Copy hex value to clipboard
-
 function copyHexValue(e) {
     const hexValueEl = e.target;
     const hexValueText = hexValueEl.textContent;
@@ -38,8 +35,14 @@ function copyHexValue(e) {
     alert(`Copied ${hexValueText} to clipboard!`);
   }
 
+// Event Listeners
 mainEl.addEventListener("click", (e) => {
   if (e.target.matches("#hex-value")) {
     copyHexValue(e);
   }
 });
+
+getColorBtn.addEventListener("click", getScheme);
+
+// Function Calls
+getScheme()
